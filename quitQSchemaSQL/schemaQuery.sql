@@ -18,7 +18,7 @@ CREATE TABLE SellerDetails (
     SellerDetailID INT PRIMARY KEY IDENTITY,
     UserID INT FOREIGN KEY REFERENCES Users(UserID), -- Links to Users table where Role = 'Seller'
     CompanyName NVARCHAR(100) NOT NULL,
-    GSTNumber NVARCHAR(20) UNIQUE NOT NULL, -- GST number for tax purposes
+    GSTNumber NVARCHAR(20) UNIQUE NOT NULL, -- GST number for tax purposes     
     BusinessAddress NVARCHAR(255),
     BusinessPhone NVARCHAR(20),
     BankAccountNumber NVARCHAR(50),

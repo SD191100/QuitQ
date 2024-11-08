@@ -90,3 +90,17 @@ CREATE TABLE Categories (
     LastModifiedDate DATETIME DEFAULT GETDATE()
 );
 
+
+-- Payments Table to store payment details for each order
+CREATE TABLE Payments (
+    PaymentID INT PRIMARY KEY IDENTITY,
+    OrderID INT FOREIGN KEY REFERENCES Orders(OrderID), -- Links to the order being paid
+    UserID INT FOREIGN KEY REFERENCES Users(UserID), -- Links to the user making the payment
+    PaymentMethod NVARCHAR(50) NOT NULL, -- e.g., 'Credit Card', 'PayPal', 'Bank Transfer'
+    Amount DECIMAL(10, 2) NOT NULL, -- Total payment amount
+    PaymentDate DATETIME DEFAULT GETDATE(), -- Date and time of the payment
+    PaymentStatus NVARCHAR(20) DEFAULT 'Pending', -- e.g., 'Pending', 'Completed', 'Failed'
+    TransactionID NVARCHAR(100) UNIQUE NULL -- Optional unique transaction ID from the payment gateway
+);
+
+

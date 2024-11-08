@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\quitQSchemaSQL"
   ],
-  "SelectedNode": "\\F:\\CASE STUDY QUITQ",
+  "SelectedNode": "\\quitQSchemaSQL\\schemaQuery.sql",
   "PreviewInSolutionExplorer": false
 }
